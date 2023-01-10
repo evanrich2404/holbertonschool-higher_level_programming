@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-num = 0
-while num < 100:
-    print("{:02d}".format(num))
-    num += 1
+for num in range (00, 99):
+    print("{:02d}" .format(num), end=", ")
+print("99")
