@@ -3,3 +3,4 @@ def uppercase(str):
     for char in str:
         k = char.upper()
         print(k)
+[".format("]
