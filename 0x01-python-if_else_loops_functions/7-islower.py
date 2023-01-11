@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 def islower(c):
-    lower = [range(ord('a'), ('z'))]
-    if c == lower:   
-        return True
-    else:
-        return False
+    for char in str:
+        k = char.islower()
+        if k == True:
+            return True
+        else:
+            return False
