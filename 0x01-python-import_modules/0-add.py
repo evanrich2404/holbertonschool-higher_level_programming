@@ -6,4 +6,4 @@ if __name__ == "__main__":
     b = 2
     print("{} + {} = {}".format(a, b, add(a, b)))
 else:
-    print("Imported")
+    return None
