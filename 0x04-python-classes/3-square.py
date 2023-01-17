@@ -6,7 +6,7 @@ class Square
 
 
 class Square:
-    
+
     """
     This class defines a Square with a private instance attribute
     """
