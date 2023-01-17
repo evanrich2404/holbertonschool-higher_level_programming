@@ -26,6 +26,7 @@ class Square:
 
         self.__size = size
 
+
     def get_size(self):
 
         """
