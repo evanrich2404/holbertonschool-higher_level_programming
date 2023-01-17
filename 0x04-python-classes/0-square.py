@@ -11,7 +11,6 @@ Example:
 """
 
 class Square:
-
     """
     This is a class Square.
     """
@@ -22,6 +21,7 @@ class Square:
             size (int): The size of the square.
         """
         self.__size = size
+
 
     def get_size(self):
         """
