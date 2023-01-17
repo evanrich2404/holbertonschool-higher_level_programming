@@ -11,10 +11,10 @@ Example:
 """
 
 class Square:
+
     """
     This is a class Square.
     """
-    
     def __init__(self, size):
         """
         Initialize a Square object.
