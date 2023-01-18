@@ -1,19 +1,20 @@
 #!/usr/bin/python3
-
-def roman_to_int(roman_strings):
-    roman_dict = {'I': 1, 'V': 5, 'X': 10,
-     'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    roman_list = list(roman_strings)
-    roman_list.reverse()
+def roman_to_int(roman_strings:str)-> int:
+    roman_to_int_dict = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
     result = 0
-    if roman_strings == '' or roman_strings == None or roman_strings != str:
-        return 0
-    else:
-        for i in range(len(roman_list)):
-            if i == 0:
-                result += roman_dict[roman_list[i]]
-            elif roman_dict[roman_list[i]] < roman_dict[roman_list[i - 1]]:
-                result -= roman_dict[roman_list[i]]
-            else:
-                result += roman_dict[roman_list[i]]
-        return result
+    for i in range(len(roman_strings)):
+        if i > 0 and roman_to_int_dict[roman_strings[i]]
+        > roman_to_int_dict[roman_strings[i - 1]]:
+            result += roman_to_int_dict[roman_strings[i]]
+             - 2 * roman_to_int_dict[roman_strings[i - 1]]
+        else:
+            result += roman_to_int_dict[roman_strings[i]]
+    return result
