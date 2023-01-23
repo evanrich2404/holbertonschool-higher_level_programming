@@ -7,8 +7,16 @@ Private instance attribute: height
 
 
 class Rectangle:
+    
+    """Class Rectangle that defines a rectangle
+    In this class we define a rectangle with private instance attributes
+    We use property and setter to validate the data
+    """
+    
     def __init__(self, width=0, height=0):
-        """Instantiation with optional width and height
+        
+        """
+        Instantiation with optional width and height
         Args:
             width (int): width of a rectangle
             height (int): height of a rectangle
