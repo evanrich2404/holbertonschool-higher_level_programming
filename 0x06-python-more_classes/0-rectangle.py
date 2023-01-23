@@ -13,6 +13,7 @@ class Rectangle:
             width (int): width of a rectangle
             height (int): height of a rectangle
         """
+        
         self.width = width
         self.height = height
     @property
