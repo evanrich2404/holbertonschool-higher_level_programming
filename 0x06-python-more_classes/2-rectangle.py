@@ -88,14 +88,3 @@ class Rectangle:
         else:
             for i in range(self.__height):
                 print("#" * self.__width)
-
-    def my_str(self):
-
-        """Public instance method that returns a string representation
-        of the rectangle
-        """
-
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        else:
-            return "\n".join(["#" * self.__width] * self.__height)
