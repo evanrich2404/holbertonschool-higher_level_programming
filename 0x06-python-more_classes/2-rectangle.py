@@ -77,29 +77,28 @@ class Rectangle:
             return 0
         return 2 * (self.__width + self.__height)
 
-    def my_str(self):
-
-        """Public instance method that returns a string representation
-        of the rectangle
+    def __str__(self):
+        
         """
-
+        string representation of the rectangle
+        that prints in stdout the rectangle with the character #
+        """
+        
         if self.__width == 0 or self.__height == 0:
             return ""
+        elif self.__width == 1 and self.__height == 1:
+            return "#"
+        elif self.__width == 1:
+            return "#\n" * self.__height
+        elif self.__height == 1:
+            return "#" * self.__width
         else:
-            return "\n".join(["#" * self.__width] * self.__height)
+            return (("#" * self.__width + "\n") * (self.__height - 1)
+            + "#" * self.__width)
 
     def __repr__(self):
 
-        """String representation of the rectangle to be able to recreate
-        a new instance by using eval()
-        """
+        """string representation of the rectangle to be able to recreate a new
+        instance by using eval()"""
 
         return "Rectangle({}, {})".format(self.__width, self.__height)
-    
-    def rectangle(self):
-
-        """
-        Public instance method that prints the rectangle with the character #
-        """
-
-        print(self.my_str())
