@@ -78,12 +78,12 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        
+
         """
         string representation of the rectangle
         that prints in stdout the rectangle with the character #
         """
-        
+
         if self.__width == 0 or self.__height == 0:
             return ""
         elif self.__width == 1 and self.__height == 1:
@@ -94,11 +94,11 @@ class Rectangle:
             return "#" * self.__width
         else:
             return (("#" * self.__width + "\n") * (self.__height - 1)
-            + "#" * self.__width)
+                + "#" * self.__width)
 
     def __repr__(self):
 
         """string representation of the rectangle to be able to recreate a new
         instance by using eval()"""
 
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "<2-rectangle.Rectangle object {:s}>".format(hex(id(self)))
