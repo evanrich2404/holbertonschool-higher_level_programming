@@ -1,1 +1,1 @@
-I would use type to print the type of object.
+I would use print and type to print the type of object.
