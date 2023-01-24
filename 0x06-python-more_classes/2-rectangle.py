@@ -95,3 +95,11 @@ class Rectangle:
         """
 
         return "Rectangle({}, {})".format(self.__width, self.__height)
+    
+    def rectangle(self):
+
+        """
+        Public instance method that prints the rectangle with the character #
+        """
+
+        print(self.my_str())
