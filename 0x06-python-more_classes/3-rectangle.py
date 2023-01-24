@@ -99,4 +99,4 @@ class Rectangle:
         """string representation of the rectangle to be able to recreate a new
         instance by using eval()"""
 
-        return "<2-rectangle.Rectangle object {:s}>".format(hex(id(self)))
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
