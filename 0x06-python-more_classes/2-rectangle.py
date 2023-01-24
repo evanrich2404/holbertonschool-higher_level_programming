@@ -86,15 +86,12 @@ class Rectangle:
 
         if self.__width == 0 or self.__height == 0:
             return ""
-        elif self.__width == 1 and self.__height == 1:
-            return "#"
-        elif self.__width == 1:
-            return "#\n" * self.__height
-        elif self.__height == 1:
-            return "#" * self.__width
         else:
-            return (("#" * self.__width + "\n") * (self.__height - 1)
-                + "#" * self.__width)
+            row = "#" * self.__width
+            rectangle = row + "\n"
+            rectangle *= self.__height - 1
+            rectangle += row
+            return rectangle
 
     def __repr__(self):
 
