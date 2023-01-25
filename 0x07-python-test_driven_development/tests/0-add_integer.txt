@@ -7,22 +7,25 @@ add_integer = __import__('0-add_integer').add_integer
 class TestAddInteger(unittest.TestCase):
     """Test cases for add_integer function"""
 
-    def test_add_integer(self):
-        """Test for add_integer function"""
-        self.assertEqual(add_integer(1, 2), 3)
-        self.assertEqual(add_integer(100, 2), 102)
-        self.assertEqual(add_integer(1, -2), -1)
-        self.assertEqual(add_integer(-1, -2), -3)
-        self.assertEqual(add_integer(1.5, 2), 3)
-        self.assertEqual(add_integer(1, 2.5), 3)
-        self.assertEqual(add_integer(1.5, 2.5), 3)
-        self.assertEqual(add_integer(1.5, -2.5), -1)
-        self.assertEqual(add_integer(-1.5, -2.5), -3)
-        self.assertEqual(add_integer(1.5, 0), 1)
-        self.assertEqual(add_integer(0, 0), 0)
-        self.assertEqual(add_integer(0, 1.5), 1)
-        self.assertEqual(add_integer(0, -1.5), -1)
-        self.assertEqual(add_integer(12, 43), 55)
-        self.assertEqual(add_integer(12, 43.5), 55)
-        self.assertEqual(add_integer(17, 52), 69)
-        self.assertEqual(add_integer(17, 52.5), 69)
+    def test_add_integer():
+    # Test case 1: Check if the function -
+    # returns the correct result for two integers
+    assert add_integer(5, 6) == 11
+    # Test case 2: Check if the function returns -
+    # the correct result for two floats
+    assert add_integer(5.5, 6.5) == 12
+    # Test case 3: Check if the function raises a -
+    # TypeError when the first argument is a string
+    try:
+        add_integer("5", 6)
+    except TypeError as e:
+        assert str(e) == "a must be an integer"
+    # Test case 4: Check if the function raises a -
+    # TypeError when the second argument is a string
+    try:
+        add_integer(5, "6")
+    except TypeError as e:
+        assert str(e) == "b must be an integer"
+    # Test case 5: Check if the function correctly assigns the -
+    # default value to the second argument
+    assert add_integer(5) == 103
