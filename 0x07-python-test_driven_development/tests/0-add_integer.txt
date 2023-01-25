@@ -1,31 +1,50 @@
-#!/usr/bin/python3
-"""Unittest for add_integer function"""
-import unittest
-add_integer = __import__('0-add_integer').add_integer
+0-add_integer module tests
 
+Retrieve the function.
+    >>> add_integer = __import__('0-add_integer').add_integer
 
-class TestAddInteger(unittest.TestCase):
-    """Test cases for add_integer function"""
+    Begin testing
+    Simple Math Tests:
+    >>> add_integer(0)
+    98
 
-    def test_add_integer():
-    # Test case 1: Check if the function -
-    # returns the correct result for two integers
-    assert add_integer(5, 6) == 11
-    # Test case 2: Check if the function returns -
-    # the correct result for two floats
-    assert add_integer(5.5, 6.5) == 12
-    # Test case 3: Check if the function raises a -
-    # TypeError when the first argument is a string
-    try:
-        add_integer("5", 6)
-    except TypeError as e:
-        assert str(e) == "a must be an integer"
-    # Test case 4: Check if the function raises a -
-    # TypeError when the second argument is a string
-    try:
-        add_integer(5, "6")
-    except TypeError as e:
-        assert str(e) == "b must be an integer"
-    # Test case 5: Check if the function correctly assigns the -
-    # default value to the second argument
-    assert add_integer(5) == 103
+    >>> add_integer(2, 8)
+    10
+
+    >>> add_integer(2)
+    100
+
+    >>> add_integer(3.1)
+    101
+
+    >>> add_integer(1.4, 2.3)
+    3
+
+    >>> add_integer(3.9, 3.9)
+    6
+
+    Type Tests:
+
+    >>> add_integer("goose")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer([9])
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer("9")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(9, "chicken")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(9, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
