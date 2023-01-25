@@ -1,0 +1,69 @@
+5-text_indentation.py module tests
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    Begin testing
+
+    Good Usage:
+
+    >>> text_indentation("""This text has no punctuation.""")
+    This text has no punctuation.
+    <BLANKLINE>
+    <BLANKLINE>
+    >>> text_indentation(""""This text only has question marks? And again? And one more time?""")
+    This text only has question marks?
+    <BLANKLINE> 
+    <BLANKLINE> 
+    And again?
+    <BLANKLINE> 
+    <BLANKLINE> 
+    And one more time?
+    <BLANKLINE> 
+    <BLANKLINE> 
+    >>> text_indentation("""This text only has colons: Like this one: and this one:""")
+    This text only has colons:
+    <BLANKLINE> 
+    <BLANKLINE> 
+    Like this one:
+    <BLANKLINE> 
+    <BLANKLINE> 
+    and this one:
+    <BLANKLINE> 
+    <BLANKLINE> 
+    >>> text_indentation("""This is a good text. It should be indented correctly. Here are the rules: no spaces at the beginning or end.""")
+    This is a good text.
+    <BLANKLINE> 
+    <BLANKLINE> 
+    It should be indented correctly.
+    <BLANKLINE> 
+    <BLANKLINE> 
+    Here are the rules:
+    <BLANKLINE> 
+    <BLANKLINE> 
+    no spaces at the beginning or end.
+    <BLANKLINE> 
+    <BLANKLINE> 
+    >>> text_indentation("")
+
+
+    Bad Usage:
+
+    >>> text_indentation(1234)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(["This is not a string"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation({"key": "value"})
+    Traceback (most recent call last):
+    TypeError: text must be a string
