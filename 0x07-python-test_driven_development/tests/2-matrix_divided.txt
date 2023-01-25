@@ -1,0 +1,65 @@
+2-matrix_divided module tests
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+    Begin testing
+
+    Good Usage:
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    >>> matrix_divided(matrix, 2)
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
+
+    >>> matrix = [[1.5, 2.5, 3.5], [4.5, 5.5, 6.5], [7.5, 8.5, 9.5]]
+    >>> matrix_divided(matrix, 3)
+    [[0.5, 0.83, 1.17], [1.5, 1.83, 2.17], [2.5, 2.83, 3.17]]
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 1)
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    >>> matrix_divided(matrix, 2.5)
+    [[0.4, 0.8, 1.2], [1.6, 2.0, 2.4], [2.8, 3.2, 3.6]]
+
+    >>> matrix = [[1, 2], [4, 5], [7, 8]]
+    >>> matrix_divided(matrix, 4)
+    [[0.25, 0.5], [1.0, 1.25], [1.75, 2.0]]
+
+    >>> matrix = [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+    >>> matrix_divided(matrix, 2)
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+    >>> matrix = [[10, 20, 30], [40, 50, 60]]
+    >>> matrix_divided(matrix, 5)
+    [[2.0, 4.0, 6.0], [8.0, 10.0, 12.0]]
+
+    Bad Usage:
+
+    >>> matrix_divided([[1, 2, '3'], [4, 5, 6]], 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8]], 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[1, 2], [3, 4]], 'a')
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1, 2], [3, 4]], 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[1, 2], [3, 4, 5]], 2)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix_divided([[1, 2], ['a', 4]], 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([], 2)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
