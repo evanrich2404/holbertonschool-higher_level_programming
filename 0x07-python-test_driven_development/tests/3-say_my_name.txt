@@ -17,6 +17,9 @@
 
     >>> say_my_name("Bob", "Marley")
     My name is Bob Marley
+    
+    >>> say_my_name("Jeremy")
+    My name is Jeremy 
 
     Bad Usage:
 
