@@ -17,12 +17,10 @@ class Student:
     def to_json(self, attrs=None):
         """Public method that retrieves a dictionary representation of a
         Student instance (same as 8-class_to_json.py)"""
-        if attrs is None:
-            return self.__dict__
+        if type(attrs) == list:
+            if all(type(attr) == str for attr in attrs):
+                return {ii: getattr(self, ii)
+                        for ii in attrs if hasattr(self, ii)}
         else:
-            new_dict = {}
-            for i in attrs:
-                if i in self.__dict__:
-                    new_dict[i] = self.__dict__[i]
             return new_dict
 
