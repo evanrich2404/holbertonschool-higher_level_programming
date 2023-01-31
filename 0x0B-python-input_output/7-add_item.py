@@ -15,8 +15,8 @@ if __name__ == "__main__":
     """rocking the main"""
     try:
         my_list = load_from_json_file("add_item.json")
-    except:
+    except FileNotFoundError:
         my_list = []
-    for i in range(1, len(sys.argv)):
-        my_list.append(sys.argv[i])
+    my_list.extend(sys.argv[1:])
     save_to_json_file(my_list, "add_item.json")
+s
