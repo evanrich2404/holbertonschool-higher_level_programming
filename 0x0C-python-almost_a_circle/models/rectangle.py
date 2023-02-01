@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-"""Rectangle class"""
+"""Rectangle module"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle class"""
+    """Rectangle subclass of Base"""
     
     def __init__(self, width, height, x=0, y=0, id=None):
         """init"""
-        super().__init__(id)
-        self.width = width
-        self.height = height
         self.x = x
         self.y = y
+        self.width = width
+        self.height = height
+        super().__init__(id)
 
     @property
     def width(self):
@@ -102,3 +102,4 @@ class Rectangle(Base):
         chicken = {'id': self.id, 'width': self.width, 'height': self.height,
                 'x': self.x, 'y': self.y}
         return chicken
+ 
