@@ -5,6 +5,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """Rectangle class"""
+    
     def __init__(self, width, height, x=0, y=0, id=None):
         """init"""
         super().__init__(id)
@@ -12,12 +13,12 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-    
+
     @property
     def width(self):
         """width"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """width"""
@@ -26,12 +27,12 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-    
+
     @property
     def height(self):
         """height"""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """height"""
@@ -40,12 +41,12 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
-    
+
     @property
     def x(self):
         """x"""
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         """x"""
@@ -59,7 +60,7 @@ class Rectangle(Base):
     def y(self):
         """y"""
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """y"""
@@ -72,14 +73,14 @@ class Rectangle(Base):
     def area(self):
         """area"""
         return self.width * self.height
-    
+
     def display(self):
         """display"""
         placeholder = '\n' * self.y
         placeholder += (' ' * self.x + '#' * self.width + '\n') * self.height
         placeholder = placeholder[:-1]
         print(placeholder)
-    
+
     def __str__(self):
         """str"""
         holderofplace = "[Rectangle] " + "({}) ".format(self.id)
