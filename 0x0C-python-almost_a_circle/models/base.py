@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """module for the Base class"""
+import json
 
 
 class Base:
@@ -24,12 +25,12 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation of list_objs to a file"""
-        filename = cls.__name__ + ".json"
-        with open(filename, "w") as f:
+        with open((cls.__name__ + ".json"), "w") as f:
             if list_objs is None:
                 f.write("[]")
             else:
-                f.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
+                holddeez = [ii.to_dictionary() for ii in list_objs]
+                f.write(Base.to_json_string(holddeez))
 
     @staticmethod
     def from_json_string(json_string):
@@ -41,19 +42,21 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Returns an instance with all attributes already set"""
-        if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
-        elif cls.__name__ == "Square":
-            dummy = cls(1)
-        dummy.update(**dictionary)
-        return dummy
+        if dictionary:
+            if cls.__name__ == "Rectangle":
+                lammo = cls(1, 1)
+            elif cls.__name__ == "Square":
+                lammo = cls(1)
+            lammo.update(**dictionary)
+            return lammo
 
     @classmethod
     def load_from_file(cls):
         """Returns a list of instances"""
         filename = cls.__name__ + ".json"
         try:
-            with open(filename, "r") as f:
-                return [cls.create(**obj) for obj in cls.from_json_string(f.read())]
-        except:
+            with open(filename) as f:
+                holddeez = Base.from_json_string(f.read())
+                return [cls.create(**ii) for ii in holddeez]
+        except IOError:
             return []
