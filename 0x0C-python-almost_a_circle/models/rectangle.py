@@ -75,48 +75,29 @@ class Rectangle(base):
     
     def display(self):
         """display"""
-        for i in range(self.y):
-            print()
-        for i in range(self.height):
-            for j in range(self.x):
-                print(" ", end="")
-            for j in range(self.width):
-                print("#", end="")
-            print()
+        placeholder = '\n' * self.y
+        placeholder += (' ' * self.x + '#' * self.width + '\n') * self.height
+        placeholder = placeholder[:-1]
+        print(placeholder)
     
     def __str__(self):
         """str"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
-            self.y, self.width, self.height)
+        holderofplace = "[Rectangle] " + "({}) ".format(self.id)
+        holderofplace += "{}/{} - ".format(self.x, self.y)
+        holderofplace += "{}/{}".format(self.width, self.height)
+        return holderofplace
 
     def update(self, *args, **kwargs):
         """update"""
         if args:
-            for i in range(len(args)):
-                if i == 0:
-                    self.id = args[i]
-                elif i == 1:
-                    self.width = args[i]
-                elif i == 2:
-                    self.height = args[i]
-                elif i == 3:
-                    self.x = args[i]
-                elif i == 4:
-                    self.y = args[i]
-        else:
-            for key, value in kwargs.items():
-                if key == "id":
-                    self.id = value
-                elif key == "width":
-                    self.width = value
-                elif key == "height":
-                    self.height = value
-                elif key == "x":
-                    self.x = value
-                elif key == "y":
-                    self.y = value
+            attrs = ['id', 'width', 'height', 'x', 'y']
+            for ii in range(len(args)):
+                setattr(self, attrs[ii], args[ii])
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
     def to_dictionary(self):
         """to_dictionary"""
-        return {'id': self.id, 'width': self.width, 'height': self.height,
+        chicken = {'id': self.id, 'width': self.width, 'height': self.height,
                 'x': self.x, 'y': self.y}
+        return chicken
