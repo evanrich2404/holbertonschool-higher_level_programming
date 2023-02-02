@@ -81,13 +81,6 @@ class Rectangle(Base):
         placeholder = placeholder[:-1]
         print(placeholder)
 
-    def __str__(self):
-        """str"""
-        holderofplace = "[Rectangle] " + "({}) ".format(self.id)
-        holderofplace += "{}/{} - ".format(self.x, self.y)
-        holderofplace += "{}/{}".format(self.width, self.height)
-        return holderofplace
-
     def update(self, *args, **kwargs):
         """update"""
         if args:
@@ -103,3 +96,9 @@ class Rectangle(Base):
                 'x': self.x, 'y': self.y}
         return chicken
  
+        def __str__(self):
+        """str"""
+        holderofplace = "[Rectangle] " + "({}) ".format(self.id)
+        holderofplace += "{}/{} - ".format(self.x, self.y)
+        holderofplace += "{}/{}".format(self.width, self.height)
+        return holderofplace
