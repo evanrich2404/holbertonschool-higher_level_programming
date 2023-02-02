@@ -75,7 +75,7 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """display"""
+        """display"""]
         placeholder = '\n' * self.y
         placeholder += (' ' * self.x + '#' * self.width + '\n') * self.height
         placeholder = placeholder[:-1]
@@ -96,7 +96,7 @@ class Rectangle(Base):
                 'x': self.x, 'y': self.y}
         return chicken
  
-        def __str__(self):
+    def __str__(self):
         """str"""
         holderofplace = "[Rectangle] " + "({}) ".format(self.id)
         holderofplace += "{}/{} - ".format(self.x, self.y)
