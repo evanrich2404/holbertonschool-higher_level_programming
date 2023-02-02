@@ -75,7 +75,7 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """display"""]
+        """display"""
         placeholder = '\n' * self.y
         placeholder += (' ' * self.x + '#' * self.width + '\n') * self.height
         placeholder = placeholder[:-1]
