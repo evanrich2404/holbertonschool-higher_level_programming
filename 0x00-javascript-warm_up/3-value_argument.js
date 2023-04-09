@@ -1,8 +1,16 @@
 #!/usr/bin/node
 // prints the first argument passed to it
 const myArgs = process.argv.slice(2);
-if (myArgs.length === 0) {
+let firstArgFound = false;
+
+for (const arg of myArgs) {
+  if (!firstArgFound) {
+    console.log(arg);
+    firstArgFound = true;
+  }
+  break;
+}
+
+if (!firstArgFound) {
   console.log('No argument');
-} else {
-  console.log(myArgs[0]);
 }
