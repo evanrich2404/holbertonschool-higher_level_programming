@@ -2,14 +2,16 @@
 // script that reads and prints the content of a file
 const fs = require('fs');
 
-if (process.argv.length === 3) {
-  fs.readFile(process.argv[2], 'utf-8', (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(data);
-    }
-  });
+if (process.argv.length < 3) {
+  console.error('Cannot find file');
 } else {
-  console.log('Usage: ./0-readme.js filename');
-};
+  const file = process.argv[2];
+
+  fs.readFile(file, 'utf8', (error, data) => {
+    if (error) {
+      console.error(` An error occurred while reading the file: ${error}`);
+      return;
+    }
+    console.log(data);
+  });
+}
