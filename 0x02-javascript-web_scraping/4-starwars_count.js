@@ -19,7 +19,7 @@ if (process.argv.length < 3) {
 
       films.forEach((film) => {
         if (film.characters.some((characterUrl) => characterUrl.includes(`/people/${characterID}/`))) {
-          count+= 1;
+          count += 1;
         }
       });
 
